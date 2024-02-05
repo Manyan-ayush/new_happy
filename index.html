@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Button</title>
+    <link rel="stylesheet" href="style1.css">
+    <link rel="shortcut icon" href="heart2.jpg" type="image/x-icon">
+</head>
+<body onload="document.refresh();">
+    <div id="wrapper">
+        <a href="button.html" style="text-decoration: none;"><div class="btn-pink" onclick="playAudio()">Click here for your gift</div></a>
+        <audio id="myAudio" loop muted style="display: none;">
+            <source src="Teri_Jhuki_Nazar.mp3" type="audio/mp3">
+            Your browser does not support the audio element.
+        </audio>
+    
+        <!-- <button onclick="playAudio()">Play Audio</button> -->
+    
+        <script>
+            function playAudio() {
+                var audio = document.getElementById("myAudio");
+                audio.muted = false; // Unmute before playing
+                audio.play().then(() => {
+                    // Autoplay successful
+                }).catch(error => {
+                    // Autoplay failed, handle the error
+                    console.error("Autoplay failed:", error.message);
+                });
+            }
+        </script>
+    </div>
+</body>
+</html>
